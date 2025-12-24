@@ -1,0 +1,78 @@
+<!--
+  File: blog.component.html
+  Author: Gentzane Pastor
+  Date: 13/07/2025
+  Description: Plantilla del componente blog.
+-->
+<!-- HEADER -->
+<header>
+    <h1>BLOG DE NOTICIAS</h1>
+</header>
+
+<!-- FORM -->
+<section class="form-section">
+    <!-- Formulario que define que metodo se encarga de cargar los datos -->
+    <form #noticiasForm="ngForm" (ngSubmit)="cargarDatos()">
+    <div class="form-contenedor">
+        <div>
+            <label for="titulo">Titulo:</label>
+            <input
+                type="text"
+                id="titulo"
+                name="titulo"
+                placeholder="Introduce el titulo de la noticia"
+                required
+                [(ngModel)]="noticia.titulo"
+            />
+        </div>
+
+        <div>
+            <label for="img">Imagen:</label>
+            <input
+                type="url"
+                id="img"
+                name="img"
+                placeholder="Introduce la url de la imagen de la noticia"
+                required
+                [(ngModel)]="noticia.img"
+                />
+        </div>
+
+        <div>
+            <label for="texto">Texto:</label>
+            <input
+                type="text"
+                id="texto"
+                name="texto"
+                placeholder="Introduce el texto de la noticia"
+                required
+                [(ngModel)]="noticia.texto"
+            />
+        </div>
+
+        <div>
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha" required [(ngModel)]="noticia.fecha" />
+        </div>
+
+        <div>
+            <!-- Si el formulario no es valido no se podra enviar -->
+            <button type="submit" [disabled]="noticiasForm.invalid">ENVIAR</button>
+        </div>
+    </div>
+    </form>
+</section>
+
+<!-- NOTICIAS -->
+<section class="noticias-contenedor">
+    <!-- Recorre el array de noticias y crea un articulo por cada noticia
+    mostrando cada una de sus propiedades -->
+    @for (mNoticia of arrayNoticias; track mNoticia.id){
+    <article class="noticia-article">
+        <h2>{{ mNoticia.titulo }}</h2>
+        <img [src]="mNoticia.img" [alt]="mNoticia.img" />
+        <p>{{ mNoticia.texto }}</p>
+        <time [attr.datetime]="mNoticia.fecha">{{ mNoticia.fecha }}</time>
+    </article>
+    }
+</section>

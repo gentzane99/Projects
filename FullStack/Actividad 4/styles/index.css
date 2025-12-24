@@ -1,0 +1,141 @@
+/*
+  File: index.css
+  Author: Gentzane Pastor
+  Date: 30/06/2025
+  Description: CSS file for index html content.
+*/
+
+/* Import roboto google font */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+}
+
+/* ================================================= */
+/* HEADER                                            */
+/* ================================================= */
+header {
+    border-bottom: 1px solid lightgray;
+}
+
+.container-header {
+    margin: 0 2.5%;
+}
+
+/* ================================================= */
+/* CARRITO INFO                                      */
+/* ================================================= */
+.carrito-products-table th,
+td {
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.carrito-info {
+    margin: 2.5%;
+    display: flex;
+    gap: 2.5%;
+}
+
+main {
+    flex-basis: 70%;
+}
+
+.carrito-products-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.carrito-products-info-r1 {
+    border-bottom: 1px solid lightgray;
+}
+
+.carrito-products-info-r1 th {
+    font-weight: 300;
+    text-align: start;
+}
+
+/* ================================================= */
+/* CARRITO PRODUCTOS                                 */
+/* ================================================= */
+.product-amount-container {
+    display: flex;
+    align-items: center;
+}
+.carrito-product {
+    border-bottom: 1px solid #eeeeee;
+}
+.button-product {
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+.product-amount {
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+}
+.product-name {
+    font-weight: 800;
+    font-size: 1.5em;
+}
+
+/*QUITAR FLECHAS DEL INPUT EN CHROME, SAFARI, EDGE, OPERA*/
+.product-amount::-webkit-outer-spin-button,
+.product-amount::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/*QUITAR FLECHAS DEL INPUT EN FIREFOX*/
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+/* ================================================= */
+/* CARRITO TOTAL                                     */
+/* ================================================= */
+.carrito-total {
+    flex-basis: 30%;
+}
+
+.carrito-total-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fafafa;
+    border-radius: 2px;
+    padding: 4%;
+}
+
+.products-total {
+    display: flex;
+    justify-content: space-between;
+    padding: 2% 0;
+}
+
+.products-total-footer {
+    padding: 4% 0 2% 0;
+    border-top: 1px solid #cccccc;
+    display: flex;
+    justify-content: space-between;
+}
+
+.span-total {
+    font-weight: 600;
+    font-size: 1.5em;
+    padding: 2% 0 4% 0;
+}

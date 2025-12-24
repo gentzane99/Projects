@@ -1,0 +1,111 @@
+<!--
+  File: index.html
+  Author: Gentzane Pastor
+  Date: 30/06/2025
+  Description: Página principal de detalle de un producto de un
+  carrito ficticio.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="styles/normalize.css" />
+        <link rel="stylesheet" href="styles/index.css" />
+
+        <title>agoodshop</title>
+    </head>
+
+    <body>
+        <header>
+            <div class="container-header">
+                <h1>agoodshop</h1>
+            </div>
+        </header>
+
+        <section class="carrito-info">
+            <main>
+                <table class="carrito-products-table">
+                    <thead>
+                        <tr class="carrito-products-info-r1">
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Unidad</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody class="products-list">
+                        <template id="products-list-item">
+                            <tr class="carrito-product">
+                                <td>
+                                    <div>
+                                        <p class="product-name"></p>
+                                        <p class="product-sku">Ref:</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="product-amount-container">
+                                        <button
+                                            class="button-product button-minus"
+                                        >
+                                            -
+                                        </button>
+                                        <!-- Se que has dicho que un input 
+                                        deberia ir siempre en un form pero 
+                                        en este caso yo no lo veo necesario, 
+                                        me gustaria saber que opinas en estos 
+                                        casos ya que el input no se necesitaria 
+                                        mandar a ningun lado yo creo -->
+                                        <!-- <form action=""> -->
+                                        <label for="product-amount"></label>
+                                        <input
+                                            type="number"
+                                            class="product-amount"
+                                            name="product-amount"
+                                            min="0"
+                                            value="0"
+                                        />
+                                        <!-- </form> -->
+                                        <button
+                                            class="button-product button-plus"
+                                        >
+                                            +
+                                        </button>
+                                    </div>
+                                </td>
+                                <td><p class="price-unit"></p></td>
+                                <td><p class="price-total"></p></td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </main>
+
+            <aside class="carrito-total">
+                <div class="carrito-total-div">
+                    <span class="span-total">Total</span>
+                    <div class="products-list2">
+                        <template id="products-list-item2">
+                            <div class="products-total">
+                                <span class="product-name-total"></span>
+                                <span class="product-price-total"></span>
+                            </div>
+                        </template>
+                    </div>
+                    <div class="products-total-footer">
+                        <span>TOTAL</span>
+                        <span class="price-total-aside">
+                            <strong>0€</strong>
+                        </span>
+                    </div>
+                </div>
+            </aside>
+        </section>
+
+        <script src="js/scripts.js"></script>
+        <script src="js/Carrito.js"></script>
+        <script src="js/products.js"></script>
+    </body>
+</html>

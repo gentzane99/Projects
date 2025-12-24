@@ -1,0 +1,798 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+/* ================================================= */
+/* FIRST MOBILE */
+/* ================================================= */
+*{
+    text-decoration: none;
+    box-sizing: border-box; /*Mete para dentro el padding etc para no interferir en el tamaño del item*/
+}
+
+html, body{
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px; /*1 rem*/
+}
+
+.contenedor-menu-carrito{
+    width: 100%;
+    height: 50px;
+    background-color: #f3f3f3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.contenedor-header{
+    position:sticky;
+    top: 0px;
+    left: 0px;
+    background-color: #333333;
+    width: 100%;
+    height: 50px;
+    z-index: 2;
+}
+
+.titular-section{
+    background-color: rgba(0, 181, 189, 0.6);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px 0px 5px 15px;
+    margin-top: 40px;
+}
+
+.titular-marcas{
+    background-color: rgba(0, 181, 189, 0.6);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px 0px 5px 15px;
+    margin-top: 40px;
+}
+.titular-noticias{
+    background-color: white;
+    color: #333333;
+    font-size: 24px;
+    padding: 0;
+    display: flex;
+    justify-content: center;     
+    font-weight: bold;   
+}
+
+/*==================================================*/
+/*FORMULARIO DE BUSQUEDA*/
+/*==================================================*/
+.contendor-buscar{
+    width: 200px;
+    height: 32px;
+    position: relative;
+}
+
+.input-buscar{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    padding-left: 35px;
+    border: none;
+}
+
+.boton-lupa{
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    border: none;
+    background: url(../img/search.png) no-repeat; /*no-repite, para que no se repita como un tile*/
+    background-size: 70% 70%; /*cambiar el tamaño del la imagen del background*/
+    background-position: 4px 4px; /*mueve la imagen del background*/
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+/*==================================================*/
+/*FIN DE FORMULARIO DE BUSQUEDA*/
+/*==================================================*/
+
+/*==================================================*/
+/*ICONOS MENU SUPERIOR (USER, CORAZON CARRITO)*/
+/*==================================================*/
+#menu-carrito{
+    display: flex;
+    gap: 20px;
+}
+
+.user-icon{
+
+    font-size: 1.4rem;
+    color: #b2b2b2;
+}
+
+.user-icon:hover{
+    color: #6009b0; /*Como todos los elementos que no son a, solo tienen hover*/
+}
+
+.heart-icon{
+
+    font-size: 1.5rem;
+    color: #b2b2b2;
+}
+
+.heart-icon:hover{
+    color: #6009b0;
+}
+
+.cart-icon{
+
+    font-size: 1.4rem;
+    color: #b2b2b2;
+}
+
+.cart-icon:hover{
+    color: #6009b0;
+}
+
+/*==================================================*/
+/*FIN ICONOS MENU SUPERIOR*/
+/*==================================================*/
+
+/*==================================================*/
+/*MENU PRINCIPAL*/
+/*==================================================*/
+
+.logo{
+    width: 120px;
+    filter: invert(0.9);
+    margin-left: 15px;
+}
+
+#menu-bar{
+    width: 30px;
+    filter: invert(0.9);
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.contenedor-logo-menu{
+    background-color: #333333;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-horizontal{
+    display: none;
+}
+
+.menu-desplegable{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(51, 51, 51, 0.9);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 0;
+    left: -100%;
+    transition: all 500ms ease-out;
+}
+
+.menu-desplegable-show{
+    left:0;
+}
+
+.menu-desplegable a{
+    padding: 16px;
+    color: white;
+    border-bottom: 1px #eeeeee solid;
+}
+
+/*==================================================*/
+/*FIN MENU PRINCIPAL*/
+/*==================================================*/
+
+/* ================================================= */
+/* CARRUSEL - glider js es mobile first*/
+/* ================================================= */
+
+.carrusel{
+    margin-top: 40px;
+}
+
+.carrusel-item{
+    padding: 10px;
+}
+
+.carrusel-item img{
+    border-radius: 10px;
+}
+
+.carrusel-contenedor{
+    position: relative;
+}
+
+.boton-carrusel-anterior, .boton-carrusel-siguiente{
+    display: none; /*MOBILE FIRST*/
+    position: absolute;
+    width: 46px;
+    height: 46px;
+
+    /*PARA CENTRAR EL BOTON VERTICALMENTE*/
+    top: 50%; /*El top sobre el porcentaje del ancestro posicionado, que es el .carrusel-contenedor*/
+    transform: translateY(-50%); /*EL transform es sobre el % del propio elemento*/
+
+    border: none;
+    cursor: pointer;
+    background-color: #333333;
+    color: white;
+    font-size: 20px;
+    border-radius: 23px;
+    z-index: 3;
+}
+
+.boton-carrusel-anterior:hover, .boton-carrusel-siguiente:hover{
+    background-color: #6009b0;
+}
+/* ================================================= */
+/* FIN CARRUSEL */
+/* ================================================= */
+
+/* ================================================= */
+/* MENU SERVICIOS */
+/* ================================================= */
+
+    .servicios{
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .menu-servicios{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu-servicios a img{
+        width: 30px;
+        height: auto;
+    }
+
+    .menu-servicios a{
+        padding: 8px;
+        cursor: pointer;
+        border-bottom: #333333 1px solid;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .menu-servicios a:link{
+        color: #333333;
+    }
+    .menu-servicios a:visited{
+        color: #333333;
+    }
+    .menu-servicios a:hover{
+        color: #6009b0;
+    }
+    .menu-servicios a:active{
+        color: #6009b0;
+    }
+
+/* ================================================= */
+/* FIN MENU SERVICIOS */
+/* ================================================= */
+
+/* ================================================= */
+/* MENU CATEGORIAS */
+/* ================================================= */
+
+    .categorias{
+        width: 100%;
+    }
+    
+    .menu-categorias{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .menu-categorias a img{
+        width: 70px;
+        height: auto;
+    
+        /*FONDO TRANSPARENTE DONDE HAY BLANCO*/
+        filter: brightness(1.1);
+        mix-blend-mode: multiply;
+    }
+    
+    .menu-categorias a{
+        padding: 5px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap:5px;
+    }
+    
+    .menu-categorias a:link{
+    
+        color: #333333;
+    }
+    .menu-categorias a:visited{
+        
+        color: #333333;
+    }
+    
+    .menu-categorias a:hover{
+        
+        color: #6009b0;
+    }
+    
+    .menu-categorias a:active{
+        
+        color: #6009b0;
+    }
+    
+    .menu-categorias a:nth-child(odd){
+        background-color: white;
+    }
+    .menu-categorias a:nth-child(even){
+        background-color: #f3f3f3;
+    }
+
+
+/* ================================================= */
+/* FIN MENU CATEGORIAS */
+/* ================================================= */
+
+/* ================================================= */
+/* MENU MARCAS */
+/* ================================================= */
+
+.marcas{
+    width: 100%;
+}
+
+.menu-marcas{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;    
+}
+
+.menu-marcas a img{
+    width: 100px;
+    height: auto;
+
+    /*FONDO TRANSPARENTE DONDE HAY BLANCO*/
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+}
+
+.menu-marcas a{
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap:20px;
+}
+
+.menu-marcas a:link{
+
+    color: #333333;
+}
+.menu-marcas a:visited{
+    
+    color: #333333;
+}
+
+.menu-marcas a:hover{
+    
+    color: #6009b0;
+}
+
+.menu-marcas a:active{
+    
+    color: #6009b0;
+}
+
+.menu-marcas a:nth-child(odd){
+    background-color: white;
+}
+.menu-marcas a:nth-child(even){
+    background-color: #f3f3f3;
+}
+
+
+/* ================================================= */
+/* FIN MENU MARCAS */
+/* ================================================= */
+
+/* ================================================= */
+/* MENU NOTICIAS */
+/* ================================================= */
+
+.noticias{
+    width: 100%;
+}
+
+.menu-noticias{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap:30px;
+}
+
+.menu-noticias a img{
+    width: 100%;
+    height: auto;
+    transition: all 300ms linear;
+}
+
+.menu-noticias a{
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.menu-noticias a:link{
+
+    color: #333333;
+}
+.menu-noticias a:visited{
+    
+    color: #333333;
+}
+
+.menu-noticias a:hover{
+    
+    color: #6009b0;
+}
+
+.menu-noticias a:active{
+    
+    color: #6009b0;
+}
+
+.menu-noticias a span{
+    padding: 20px 0 30px 0;
+
+}
+
+.menu-noticias a:hover > img{
+    transform: scale(1.1);
+}
+
+/* ================================================= */
+/* FIN MENU NOTICIAS */
+/* ================================================= */
+
+/* ================================================= */
+/* MENU PAGOS */
+/* ================================================= */
+
+.compras-seguras{
+    width: 100%;
+    padding: 20px;
+}
+
+.menu-compras-seguras{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-compras-seguras a img{
+    width: 50px;
+    height: auto;
+
+    /*FONDO TRANSPARENTE DONDE HAY BLANCO*/
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+}
+
+.menu-compras-seguras a{
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap:10px;
+    background-color: #f3f3f3;
+    border-bottom: 1px solid #b4b4b4;
+}
+
+.menu-compras-seguras a:link{
+
+    color: #333333;
+}
+.menu-compras-seguras a:visited{
+    
+    color: #333333;
+}
+
+.menu-compras-seguras a:hover{
+    
+    color: #6009b0;
+}
+
+.menu-compras-seguras a:active{
+    
+    color: #6009b0;
+}
+
+/* ================================================= */
+/* FIN PAGOS */
+/* ================================================= */
+
+/* ================================================= */
+/* MEDIA QUERIES */
+/* ================================================= */
+
+/* MAYOR O IGUAL DE 576PX (A PARTIR DE 575PX INCLUSIVE) - SMARTPHONES */
+@media only screen and (min-width:576px){
+
+
+}
+
+
+/* MAYOR O IGUAL DE 768PX (A PARTIR DE 768PX INCLUSIVE) - SMARTPHONES GRANDES, TABLETS */
+@media only screen and (min-width:768px){
+
+    #menu-bar{
+        display: none;
+    }
+    
+    .menu-horizontal{
+        display: flex;
+        gap: 20px;
+    }
+    
+    .menu-horizontal a{
+        color: white;
+        padding: 8px;
+        border-radius: 10px;
+    }
+    
+    .menu-horizontal a:link{
+        color: white;
+    }
+    
+    .menu-horizontal a:visited{
+        color: white;
+    }
+    
+    .menu-horizontal a:hover{
+        color: white;
+        background-color: #6009b0;
+    }
+    
+    .menu-horizontal a:active{
+        color: white;
+    }
+    
+    .contenedor-logo-menu{
+        justify-content: flex-start;
+        gap: 40px;
+    }
+    
+    .contenedor-buscar{
+        width: 300px;
+    }
+    
+    .boton-carrusel-anterior, .boton-carrusel-siguiente{
+        display: block;
+        opacity: 0;
+        transition: all 1s linear;
+    }
+    
+    /*ESTE ESTILO SIRVE PARA QUE CUANDO CURSEMOS EL RATON SOBRE EL BOTON DE FLECHA
+    NO DESAPAREZCA, ESTO ES PORQUE DEJAMOS DE HACER HOVER SOBRE EL CARROUSEL ITEMS*/
+    .boton-carrusel-anterior:hover, .boton-carrusel-siguiente:hover{
+        opacity: 1;
+    }
+    
+    .boton-carrusel-anterior{
+        left: calc(3%);
+    }
+    
+    .boton-carrusel-siguiente{
+        right: calc(3%);
+    }
+    
+    
+    /*VAMOS A HACER APARECER LAS FLECHITAS*/
+    .carrusel-items:hover ~ button{
+        opacity: 1;
+    }
+
+    
+    /*SERVICIOS*/
+    
+    .menu-servicios{
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .menu-servicios a{
+        border-bottom: none;
+    }
+    
+    .menu-servicios span{
+        display: none;
+    }
+    
+    .menu-servicios a img{
+        width: 50px;
+    }
+    /*CATEGORIAS*/
+
+    .titular-section{
+        background-color: white;
+        color: #333333;
+        font-size: 24px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .categorias{
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .menu-categorias{
+        width: 80%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .menu-categorias a span{
+        font-size: 14px;
+
+    }
+
+    .menu-categorias a{
+        background-color: white !important;
+        width: 33%;
+        border-bottom: 1px solid #dddddd;
+        padding: 40px 0;
+    }
+
+    /*MARCAS*/
+
+    .titular-marcas{
+        background-color: white;
+        color: #333333;
+        font-size: 24px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .marcas{
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .menu-marcas{
+        width: 80%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .menu-marcas a span{
+        display: none;
+
+    }
+
+    .menu-marcas a{
+        background-color: white !important;
+        width: 20%;
+        height: auto;
+        border: 1px solid #dddddd;
+        border-radius: 20px;
+        padding: 20px 0;
+        justify-content: center;
+        margin: 5px;
+    }
+
+    .menu-marcas a:link{
+
+        border: 1px solid #dddddd;
+    }
+    .menu-marcas a:visited{
+
+        border: 1px solid #dddddd;
+    }
+    .menu-marcas a:hover{
+
+        border: 2px solid #333333;
+    }
+    .menu-marcas a:active{
+
+        border: 2px solid #333333;
+    }
+
+    .menu-marcas img{    
+        transition: all 0.5s ease-in;
+    }
+    .menu-marcas:hover a:hover img{
+        
+        transform: scale(1.1);
+    }
+
+    /*NOTICIAS*/
+
+    .noticias{
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+    }
+
+    .menu-noticias{
+        width: 80%;
+        flex-direction: row;
+        padding: 0;
+        gap: 0;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .menu-noticias a{
+        width: 48%;
+        margin-bottom: 20px;
+    }
+    
+}
+
+/* MAYOR O IGUAL DE 992PX (A PARTIR DE 992PX INCLUSIVE) - PC PEQUEÑOS, LAPTOPS */
+@media only screen and (min-width:992px){
+
+    .boton-carrusel-anterior{
+        left: calc(31%);
+    }
+    
+    .boton-carrusel-siguiente{
+        right: calc(31%);
+    }
+    
+    .menu-servicios a span{
+        display: inline-block;
+        font-size: 12px;
+    }
+
+    .menu-servicios a img{
+        width: 50px;
+    }
+
+    .titular-section{
+        font-size: 20px;    
+    }
+
+    .menu-marcas a{
+        width: 18%;
+    }
+
+    .menu-noticias a{
+        width: 32%;
+    }
+
+}
+
+/* MAYOR O IGUAL DE 1200PX (A PARTIR DE 1200PX INCLUSIVE) - PC GRANDES, TELEVISIONES */
+@media only screen and (min-width:1200px){
+
+
+
+
+}

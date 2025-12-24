@@ -1,0 +1,128 @@
+/*
+  File: blog.component.css
+  Author: Gentzane Pastor
+  Date: 13/07/2025
+  Description: Hoja de estilos del componente blog.
+*/
+
+/* ================================================= */
+/* FIRST MOBILE                                      */
+/* ================================================= */
+*{
+    padding: 16px;
+}
+
+/* ================================================= */
+/* HEADER                                            */
+/* ================================================= */
+header h1{
+    color: var(--color-rosa-principal);
+    text-align: center;
+}
+
+/* ================================================= */
+/* FORMULARIO                                        */
+/* ================================================= */
+.form-section{
+    background-color: var(--color-rosa-form-bg);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 32px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-contenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.form-contenedor label{
+    color: var(--color-gris-texto);
+}
+
+.form-contenedor input{
+    padding: 10px;
+    border: 1px solid var(--color-rosa-border);
+    border-radius: 8px;
+}
+
+button{
+    background-color: var(--color-rosa-principal);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: var(--color-rosa-botton-hover);
+}
+
+button[disabled]{
+    background-color: var(--color-gris-botton-disabled);
+}
+
+/* ================================================= */
+/* NOTICIAS                                          */
+/* ================================================= */
+.noticias-contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+}
+
+.noticia-article{
+    width: 100%;
+    max-width: 400px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    border: 1px solid var(--color-rosa-border);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.noticia-article h2{
+    color: var(--color-rosa-principal);
+    word-break: break-all; /*Separa palabras muy largas*/
+}
+
+.noticia-article img{
+    width: 100%;
+    display: block;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+.noticia-article p{
+    color: var(--color-gris-texto);
+    margin-bottom: 5px;
+    word-break: break-all;
+}
+
+.noticia-article time{
+    color: var(--color-gris-fecha);
+    display: block;
+    text-align: right;
+}
+
+/* ================================================= */
+/* DISPOSITIVOS > 769PX                              */
+/* ================================================= */
+@media (min-width: 769px) {
+
+/* ================================================= */
+/* FORMULARIO                                        */
+/* ================================================= */
+    .form-contenedor {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

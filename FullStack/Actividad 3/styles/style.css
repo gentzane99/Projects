@@ -1,0 +1,316 @@
+/*
+  File: style.css
+  Author: Gentzane Pastor
+  Date: 03/05/2025
+  Description: CSS file for index html content.
+*/
+
+/* Import roboto google font */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* ================================================= */
+/* FIRST MOBILE                                      */
+/* ================================================= */
+:root {
+    --margin-top: 2em;
+}
+
+* {
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+}
+
+p {
+    line-height: 1.5rem;
+}
+
+.wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ================================================= */
+/* HEADER                                            */
+/* ================================================= */
+header {
+    border-bottom: 1px solid lightgray;
+}
+
+.header-menu {
+    display: none;
+}
+
+/* ================================================= */
+/* IFHONE INFO SECTION                               */
+/* ================================================= */
+.container-ifhone {
+    margin-top: var(--margin-top);
+}
+
+.container-image-ifhone {
+    position: relative;
+}
+
+.container-image-ifhone img {
+    width: 100%;
+    height: auto;
+}
+
+.container-gb {
+    background-color: #22c55e;
+    color: white;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    padding: 0.4em 0.8em;
+    text-align: center;
+}
+
+.container-text-iphone {
+    margin-top: var(--margin-top);
+}
+
+.span-sale {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+.container-price-iphone {
+    width: 100%;
+    display: flex;
+    margin-top: var(--margin-top);
+    gap: 5%;
+    align-items: center;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#buy-button {
+    color: white;
+    background-color: #3b82f6;
+    border: 2px solid #2d65d6;
+    border-radius: 5px;
+    padding: 0.8em;
+}
+
+.container-info {
+    margin-top: var(--margin-top);
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.container-info-child {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.container-info-child i {
+    font-size: 2rem;
+}
+
+/* ================================================= */
+/* ACCESORIES SECTION                                */
+/* ================================================= */
+.container-accesories-text {
+    margin-top: var(--margin-top);
+}
+
+.container-accesories {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.container-item {
+    padding: 0.4em 0.5em;
+    border: 1px solid #ededee;
+    border-radius: 5px;
+    flex-grow: 1;
+}
+
+.container-item img {
+    width: 100%;
+    height: auto;
+}
+
+.container-sale {
+    color: white;
+    background-color: #dc2626;
+    border-radius: 5px;
+    padding: 0.4em 0.8em;
+}
+
+.container-new {
+    color: white;
+    background-color: #3b82f6;
+    border-radius: 5px;
+    padding: 0.4em 0.8em;
+}
+
+/* ================================================= */
+/* RAFFLE FORM SECTION                               */
+/* ================================================= */
+
+.container-raffle {
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    margin-top: var(--margin-top);
+    background-color: #eff6ff;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.container-raffle-text {
+    width: 100%;
+    height: auto;
+}
+
+.form-raffle {
+    width: 100%;
+    height: auto;
+}
+
+.form-input-name {
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--margin-top);
+}
+
+.form-input-email {
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--margin-top);
+}
+
+.form-raffle #name,
+#email {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    color: lightgray;
+    padding: 1em;
+}
+
+#button-submit input {
+    color: white;
+    background-color: #3b82f6;
+    border: 1px solid #4473d7;
+    border-radius: 5px;
+    padding: 0.7em;
+    margin-top: var(--margin-top);
+}
+
+/* ================================================= */
+/* FOOTER                                            */
+/* ================================================= */
+footer {
+    text-align: center;
+    margin-top: var(--margin-top);
+    border-top: 1px solid lightgray;
+    font-size: 0.5rem;
+}
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+    /* ================================================= */
+    /* HEADER                                            */
+    /* ================================================= */
+    .container-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header-menu {
+        display: flex;
+    }
+
+    .header-menu ul {
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        gap: 1rem;
+    }
+
+    .header-menu a {
+        color: black;
+    }
+
+    .header-menu #contact-button {
+        background-color: white;
+        border-radius: 10px;
+        border: 1px solid lightgray;
+        padding: 1em;
+    }
+
+    /* ================================================= */
+    /* IFHONE INFO                                       */
+    /* ================================================= */
+    .container-ifhone {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .container-image-ifhone {
+        flex-grow: 3;
+        flex-shrink: 0;
+    }
+
+    .container-text-iphone {
+        flex-grow: 1;
+        margin-top: 0;
+        flex-shrink: 1;
+    }
+    /* ================================================= */
+    /* ACCESORIES SECTION                                */
+    /* ================================================= */
+    .container-accesories {
+        flex-direction: row;
+    }
+
+    /* ================================================= */
+    /* RAFFLE FORM SECTION                               */
+    /* ================================================= */
+    .container-raffle {
+        flex-direction: row;
+        gap: 4em;
+    }
+
+    .container-raffle-text {
+        width: 75%;
+    }
+
+    .form-raffle {
+        width: 25%;
+    }
+}
+
+/* X-Large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+}
+
+/* XX-Large devices (larger desktops, 1400px and up)*/
+@media (min-width: 1400px) {
+}

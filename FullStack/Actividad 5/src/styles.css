@@ -1,0 +1,34 @@
+/*
+  File: styles.css
+  Author: Gentzane Pastor
+  Date: 13/07/2025
+  Description: Hoja de estilos globales de la aplicacion.
+*/
+
+/* Carga la fuente Roboto*/
+@font-face {
+    font-family: 'Roboto';
+    src: url(../public/fonts/Roboto-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Peuqueño reset de estilos global */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Variables para los colores de blog */
+:root{
+    --color-rosa-principal: #ec407a;
+    --color-rosa-botton-hover: #e91e63;
+    --color-rosa-border: #f48fb1;
+    --color-rosa-form-bg: #ffeef4;
+    --color-gris-texto: #555;
+    --color-gris-fecha: #333;
+    --color-gris-botton-disabled: #ccc;
+}
+
