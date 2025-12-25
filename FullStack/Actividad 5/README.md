@@ -1,59 +1,62 @@
-# Actividad5
+# Angular Blogging System
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.4.
+Sistema de blogging desarrollado en **Angular** que permite crear y listar publicaciones dentro de una Single Page Application (SPA).  
+Proyecto académico enfocado en la gestión de datos desde un formulario y su representación dinámica en la vista.
 
-## Development server
+## Objetivo del proyecto
+Desarrollar un sistema de publicación de noticias que permita:
+- Mostrar un listado inicial de publicaciones
+- Crear nuevas entradas mediante un formulario
+- Validar los datos introducidos antes de su inserción
+- Actualizar el listado de forma dinámica
 
-To start a local development server, run:
+Todo ello dentro de un único componente Angular.
 
+## Tecnologías utilizadas
+- Angular
+- TypeScript
+- HTML5
+- CSS3
+- Programación basada en componentes
+
+## Características principales
+- SPA desarrollada con Angular
+- Componente `BlogComponent` que incluye:
+  - Formulario de creación de noticias
+  - Listado de publicaciones
+- Uso de:
+  - Eventos de Angular
+  - Data binding
+  - Directivas de templating
+- Array de objetos inicializado con dos noticias por defecto
+- Validación de formulario:
+  - Todos los campos son obligatorios
+  - No se inserta la noticia si falta algún dato
+
+## Modelo de datos
+Cada publicación contiene:
+- Título
+- Imagen (URL)
+- Texto de la noticia
+- Fecha de publicación
+
+
+## Funcionamiento
+- Al cargar la aplicación se muestran dos noticias iniciales
+- El usuario puede añadir una nueva noticia desde el formulario
+- Si algún campo está vacío, se muestra un aviso y no se añade la publicación
+- Al añadir una noticia válida, esta se refleja automáticamente en el listado
+
+## Ejecución
+Instalar dependencias y arrancar el proyecto:
 ```bash
+npm install
 ng serve
-```
+``` 
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Acceder a la aplicación en:
+http://localhost:4200
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+##Notas
+- No se utiliza backend ni persistencia de datos
+- Los datos se gestionan únicamente en memoria mediante arrays
