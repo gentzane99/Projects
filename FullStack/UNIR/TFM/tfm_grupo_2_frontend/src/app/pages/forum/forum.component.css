@@ -1,0 +1,505 @@
+:root {
+    --color-pastel-orange: #ff8c5f; 
+    --color-light-orange: #ffe0d4; 
+    --color-text-dark: #333333;
+    --color-text-light: #666666;
+    --color-background-white: white;
+}
+
+/* ---------------------------------------------------------- */
+/* 1. Estilos de Contenedor General y Tipografía */
+/* ---------------------------------------------------------- */
+
+.forum-container {
+    padding: 0px 40px;
+    background-color: white;
+    width: 100%;
+}
+
+.forum-subtitle {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+    margin: 0;
+}
+
+.header-content {
+    display: flex; 
+    align-items: center; 
+    gap: 10px; /* Espacio entre la flecha y el título */
+}
+
+.forum-title {
+    font-weight: 800;
+    margin: 0;
+}
+
+
+.section-title {
+    font-size: 1.5rem;
+    color: var(--color-text-dark);
+    font-weight: 700;
+}
+
+.loading, .empty-state {
+    text-align: center;
+    padding: 30px;
+    color: var(--color-text-light);
+    font-weight: 600;
+    border: 1px dashed #f0a472;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* ---------------------------------------------------------- */
+/* 2. Estilos de Header (basados en .tripsHeader) */
+/* ---------------------------------------------------------- */
+
+.forum-header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    justify-content: space-between;
+    align-items: center; 
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 2%;
+    padding: 20px 0 10px 0;
+    border-bottom: 2px solid var(--color-light-orange);
+}
+
+.headerLeft {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.back-button {
+ 
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    height: 44px;
+    background-color: var(--color-background-white);
+    border: none;
+    color: var(--color-pastel-orange);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.2s;
+}
+
+.back-button:hover {
+    background-color: var(--color-light-orange);
+}
+
+.filtersRight {
+    margin-left: auto;
+}
+
+.createTripButton {
+   
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--color-pastel-orange);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(255, 183, 153, 0.4);
+    transition: background-color 0.3s, transform 0.2s;
+    height: 44px;
+    width: auto; 
+    white-space: nowrap;
+}
+
+.createTripButton:hover {
+    background-color: #fa966f;
+    transform: translateY(-2px);
+}
+
+
+/* ---------------------------------------------------------- */
+/* 3. Estilos de la Cuadrícula de Viajes/Comentarios (.tripsCards) */
+/* ---------------------------------------------------------- */
+
+.trip-selector-section, .forum-content {
+    margin-top: 30px;
+}
+
+.trips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    height: 75vh;
+    overflow-y: scroll;
+}
+
+
+.comments-list {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 25px;
+    height: 75vh;
+    overflow-y: scroll;
+}
+
+.trip-card, .comment-card {
+    background-color: var(--color-background-white);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.2s, box-shadow 0.3s;
+    cursor: pointer; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+.trip-card:hover, .comment-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px #f0a472;
+}
+.trip-card .tripImage {
+    width: 100%;
+    height: 180px; 
+    object-fit: cover;
+    border-radius: 8px; 
+    margin-bottom: 15px;
+    border: 1px solid var(--color-light-orange);
+}
+
+.trip-card-title {
+   
+    font-size: 1.35rem; 
+    font-weight: 800;
+    
+    padding: 8px 12px;
+    background-color: var(--color-light-orange);
+
+    margin: 0 0 5px 0;
+    border-radius: 4px;
+    display: inline-block; 
+}
+
+.trip-card-place {
+
+    margin: 0 0 10px 0;
+    padding-left: 12px; 
+}
+
+/* ---------------------------------------------------------- */
+/* 4. Estilos de Comentarios y Respuestas */
+/* ---------------------------------------------------------- */
+
+.comment-header, .reply-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.comment-author, .reply-author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.author-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 2px solid var(--color-light-orange);
+}
+
+.author-avatar.small {
+    width: 30px;
+    height: 30px;
+}
+
+.author-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.author-name {
+    font-weight: 700;
+    color: var(--color-text-dark);
+    margin: 0;
+    font-size: 1rem;
+}
+
+.comment-date, .reply-date {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    margin: 0;
+}
+
+.comment-body {
+    flex-grow: 1; 
+}
+
+.comment-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-pastel-orange);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.comment-message, .reply-message {
+    font-size: 0.95rem;
+    color: var(--color-text-dark);
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.replies-section {
+    border-top: 1px solid var(--color-light-orange);
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.reply-card {
+    background-color: #fcfcfc;
+    border-left: 3px solid var(--color-light-orange);
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 0 6px 6px 0;
+}
+
+.reply-card:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.reply-form-container {
+    margin-top: auto; 
+    padding-top: 10px;
+    text-align: right;
+}
+
+.btn-reply {
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    background-color: var(--color-background-white);
+    border: 1px solid var(--color-pastel-orange);
+    color: var(--color-pastel-orange);
+    font-size: 0.9rem;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-reply:hover {
+    background-color: var(--color-light-orange);
+    transform: translateY(-1px);
+}
+
+
+/* ---------------------------------------------------------- */
+/* 5. Estilos de Popups (Modales) */
+/* ---------------------------------------------------------- */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 600px; 
+    position: relative;
+}
+
+.modal-header {
+    padding: 20px 20px 10px 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-title {
+    color: var(--color-pastel-orange);
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+.close-btn {
+    position: static;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: var(--color-pastel-orange);
+}
+
+
+
+.comment-form {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    display: block;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+}
+
+.form-input, .form-textarea {
+    width: 100%; 
+    padding: 10px 15px;
+    border: 2px solid var(--color-light-orange);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    background-color: var(--color-background-white);
+    resize: vertical;
+    transition: border-color 0.3s;
+}
+
+.form-input:focus, .form-textarea:focus {
+    border-color: var(--color-pastel-orange);
+    outline: none;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-cancel {
+
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    height: 44px;
+    background-color: var(--color-background-white);
+    border: none;
+    color: var(--color-text-dark);
+}
+
+.btn-cancel:hover {
+    background-color: #f4f4f4;
+}
+
+.btn-submit {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--color-pastel-orange);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(255, 183, 153, 0.4);
+    height: 44px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-submit:disabled {
+    background-color: #cccccc;
+    box-shadow: none;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ---------------------------------------------------------- */
+/* 6. Responsive Móvil */
+/* ---------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .forum-page {
+        padding: 0 15px;
+    }
+
+    .forum-container {
+        padding: 0 15px; 
+    }
+
+    .forum-header {
+        flex-direction: column; 
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .headerLeft {
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .header-content {
+
+        flex-wrap: wrap; 
+        gap: 10px;
+    }
+
+    .forum-title {
+        font-size: 1.8rem;
+    }
+
+    .forum-subtitle {
+        width: 100%; 
+        margin-top: -5px;
+    }
+
+    .back-button {
+        padding: 8px 12px;
+        height: 38px;
+    }
+
+    .filtersRight {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .createTripButton {
+        width: 100%;
+        max-width: none;
+        height: 40px;
+    }
+
+
+    .trips-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+
+    .modal-content {
+        max-width: 90%;
+    }
+}

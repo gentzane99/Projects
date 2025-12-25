@@ -1,0 +1,36 @@
+@URL = http://localhost:3000/api
+
+GET {{URL}}/posts
+
+###
+GET {{URL}}/posts/1
+
+###
+GET {{URL}}/autores
+
+###
+GET {{URL}}/autores/1
+
+###
+GET {{URL}}/autores/1/posts/
+
+###
+POST {{URL}}/posts
+Content-Type: application/json
+
+{
+    "titulo": "Cómo elegir un buen ??????", 
+    "descripcion": "Factores técnicos",
+    "categoria": "Tecnología",
+    "idAutores": "2"
+}
+
+###
+POST {{URL}}/autores
+Content-Type: application/json
+
+{
+    "nombre": "EL JAVI", 
+    "email": "jexa@mple.com",
+    "imagen": "https://i.pravatar.cc/150?img=15"
+}

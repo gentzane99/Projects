@@ -1,0 +1,257 @@
+<div class="page-container">
+    <app-trips-header></app-trips-header>
+
+    <div class="forum-container">
+        <div class="forum-header tripsHeader">
+            <div class="headerLeft">
+                <div class="header-content">
+                    @if (trip) {
+                        <button class="back-button clearFiltersButton" (click)="goBack()" aria-label="Volver">
+                            <span class="material-icons">←</span> 
+                        </button>
+                    }
+                    <h2 class="forum-title">Foro</h2>
+                    @if (trip) {
+                        <p class="forum-subtitle">{{ trip.name }} - {{ trip.destinyPlace }}</p>
+                    }
+                </div>
+            </div>
+            <div class="filtersRight">
+                @if (tripId) {
+                <div class="createTripSlot">
+                    <button class="createTripButton" (click)="openCreateCommentPopup()">
+                        CREAR COMENTARIO
+                    </button>
+                </div>
+                }
+            </div>
+        </div>
+
+        @if (!tripId) {
+            <section class="trip-selector-section">
+                @if (loadingTrips) {
+                    <div class="loading">
+                        <p>Cargando viajes...</p>
+                    </div>
+                }
+                @if (!loadingTrips && trips.length > 0) {
+                    <div class="trips-grid">
+                        @for (trip of trips; track trip.id) {
+                            <div class="trip-card" (click)="selectTrip(trip)">
+                                <img 
+                                class="tripImage" 
+                                [src]="trip.destinyImage" 
+                                [alt]="trip.destinyPlace">
+                                <p class="trip-card-title">{{ trip.name }}</p>
+                                <p class="trip-card-place">{{ trip.startDate | dateRange:trip.endDate }}</p>
+                            </div>
+                        }
+                    </div>
+                }
+                @if (!loadingTrips && trips.length === 0) {
+                    <div class="empty-state no-trips-message">
+                        <p>No hay viajes disponibles.</p>
+                    </div>
+                }
+            </section>
+        }
+
+        @if (tripId) {
+            <div class="forum-content">
+                <section class="comments-section">
+                    @if (loadingComments) {
+                        <div class="loading">
+                            <p>Cargando comentarios...</p>
+                        </div>
+                    }
+
+                    @if (!loadingComments && comments.length > 0) {
+                        <div class="comments-list tripsCards">
+                            @for (comment of comments; track comment.commentId) {
+                                <article class="comment-card trip-card">
+                                    <div class="comment-header">
+                                        <div class="comment-author">
+                                            <div class="author-avatar">
+                                                <img
+                                                    [src]="comment.avatar || getUserAvatar(comment.user)"
+                                                    [alt]="comment.user"
+                                                    (error)="onAvatarError($event)"
+                                                />
+                                            </div>
+                                            <div class="author-info">
+                                                <h3 class="author-name">{{ comment.user }}</h3>
+                                                @if (comment.createdAt) {
+                                                    <p class="comment-date">
+                                                        {{ formatDate(comment.createdAt) }}
+                                                    </p>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="comment-body">
+                                        @if (comment.title) {
+                                            <h4 class="comment-title">{{ comment.title }}</h4>
+                                        }
+                                        <p class="comment-message">{{ comment.message }}</p>
+                                    </div>
+
+                                    @if (comment.replies && comment.replies.length > 0) {
+                                        <div class="replies-section">
+                                            <hr style="border: 0; border-top: 1px solid #f0f0f0; margin: 10px 0;">
+                                            <div class="replies-list">
+                                                @for (reply of comment.replies; track reply) {
+                                                    <div class="reply-card">
+                                                        <div class="reply-header">
+                                                            <div class="reply-author">
+                                                                <div class="author-avatar small">
+                                                                    <img
+                                                                        [src]="reply.avatar || getUserAvatar(reply.user)"
+                                                                        [alt]="reply.user"
+                                                                        (error)="onAvatarError($event)"
+                                                                    />
+                                                                </div>
+                                                                <div class="author-info">
+                                                                    <h4 class="author-name">{{ reply.user }}</h4>
+                                                                    @if (reply.createdAt) {
+                                                                        <p class="reply-date">
+                                                                            {{ formatDate(reply.createdAt) }}
+                                                                        </p>
+                                                                    }
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <p class="reply-message">{{ reply.message }}</p>
+                                                    </div>
+                                                }
+                                            </div>
+                                        </div>
+                                    }
+
+                                    <div class="reply-form-container">
+                                        <button
+                                            class="btn-reply clearFiltersButton"
+                                            (click)="openReplyPopup(comment.commentId)"
+                                        >
+                                            RESPONDER
+                                        </button>
+                                    </div>
+                                </article>
+                            }
+                        </div>
+                    }
+
+                    @if (!loadingComments && comments.length === 0) {
+                        <div class="empty-state no-trips-message">
+                            <p>No hay comentarios aún. ¡Sé el primero en comentar!</p>
+                            <div class="createTripSlot">
+                                <button class="createTripButton" (click)="openCreateCommentPopup()">
+                                    CREAR COMENTARIO
+                                </button>
+                            </div>
+                        </div>
+                    }
+                </section>
+            </div>
+        }
+
+        @if (showCreateCommentPopup) {
+            <div class="modal-overlay popup-overlay" (click)="closeCreateCommentPopup()">
+                <div class="modal-content popup" (click)="$event.stopPropagation()">
+                    <div class="modal-header">
+                        <h2 class="modal-title">CREAR COMENTARIO</h2>
+                        <button class="close-btn" (click)="closeCreateCommentPopup()" aria-label="Cerrar">
+                            ×
+                        </button>
+                    </div>
+                    <form class="comment-form" (ngSubmit)="createComment()">
+                        <div class="form-group">
+                            <label for="comment-title" class="form-label">Título (opcional)</label>
+                            <input
+                                type="text"
+                                id="comment-title"
+                                class="form-input filterInput"
+                                [(ngModel)]="newComment.title"
+                                name="title"
+                                placeholder="Título del comentario"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="comment-message" class="form-label">Descripción *</label>
+                            <textarea
+                                id="comment-message"
+                                class="form-textarea filterInput"
+                                [(ngModel)]="newComment.message"
+                                name="message"
+                                placeholder="Escribe tu comentario aquí..."
+                                rows="6"
+                                required
+                            ></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button
+                                type="button"
+                                class="btn-cancel clearFiltersButton"
+                                (click)="closeCreateCommentPopup()"
+                            >
+                                CANCELAR
+                            </button>
+                            <button
+                                type="submit"
+                                class="btn-submit createTripButton"
+                                [disabled]="creatingComment || !newComment.message.trim()"
+                            >
+                                {{ creatingComment ? 'Publicando...' : 'CREAR' }}
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        }
+
+        @for (comment of comments; track comment.commentId) {
+            @if (showReplyPopup[comment.commentId]) {
+                <div class="modal-overlay popup-overlay" (click)="closeReplyPopup(comment.commentId)">
+                    <div class="modal-content popup" (click)="$event.stopPropagation()">
+                        <div class="modal-header">
+                            <h2 class="modal-title">RESPONDER COMENTARIO</h2>
+                            <button class="close-btn" (click)="closeReplyPopup(comment.commentId)" aria-label="Cerrar">
+                                ×
+                            </button>
+                        </div>
+                        <form class="comment-form" (ngSubmit)="replyToComment(comment.commentId)">
+                            <div class="form-group">
+                                <label for="reply-message" class="form-label">Descripción *</label>
+                                <textarea
+                                    id="reply-message"
+                                    class="form-textarea filterInput"
+                                    [(ngModel)]="replyForms[comment.commentId].message"
+                                    name="reply-message"
+                                    placeholder="Escribe tu respuesta..."
+                                    rows="6"
+                                    required
+                                ></textarea>
+                            </div>
+                            <div class="form-actions">
+                                <button
+                                    type="button"
+                                    class="btn-cancel clearFiltersButton"
+                                    (click)="closeReplyPopup(comment.commentId)"
+                                >
+                                    CANCELAR
+                                </button>
+                                <button
+                                    type="submit"
+                                    class="btn-submit createTripButton"
+                                    [disabled]="replyingToComment === comment.commentId || !(replyForms[comment.commentId]?.message || '').trim()"
+                                >
+                                    {{ replyingToComment === comment.commentId ? 'Enviando...' : 'RESPONDER' }}
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>

@@ -1,0 +1,321 @@
+
+/* ========================================================== */
+/* ESTILOS DEL FORMULARIO DE PERFIL (userFormSidebar) */
+/* ========================================================== */
+
+.userFormSidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-height: 100vh;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+
+/* ========================================================== */
+/* ANGULAR MATERIAL CHIPS DE INTERESES */
+/* ========================================================== */
+
+.toggleChipsBtn {
+    margin-left: 8px;
+    background: none;
+    border: none;
+    color: var(--color-pastel-orange);
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0;
+}
+
+.selectedChips {
+    display: block;
+}
+.selectedChips .selectedChip {
+    background: #fff8f5;
+    color: var(--color-pastel-orange);
+    border: 1px solid #ffe0d1;
+}
+.selectedChips.empty .emptyHint {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.allInterestsPanel {
+    margin-top: 8px;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background: #fff;
+}
+
+/* ========================================================== */
+/* CABECERA FIJA (Título, iconos y puntuación) */
+/* ========================================================== */
+.stickyHeader {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #fff;
+    padding: 20px 25px;
+}
+
+.profileHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.profileTitle {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+}
+
+.profileIcons {
+    display: flex;
+    gap: 10px;
+}
+
+.iconButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 5px;
+    color: #555;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.iconButton:hover {
+    color: var(--color-pastel-orange);
+    transform: scale(1.1);
+}
+
+/* Puntuación */
+.ratingContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.detailLabel {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #777;
+  text-transform: uppercase;
+
+  /* Opcional: evita que el label “empuje” el ancho y afecte al wrap */
+  min-width: 0;
+}
+
+
+.ratingValue {
+    padding: 10px 12px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-pastel-orange);
+    background-color: #fff8f5;
+    text-align: center;
+}
+
+/* ========================================================== */
+/* CONTENIDO SCROLLABLE */
+/* ========================================================== */
+.scrollContent {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 25px;
+    padding-bottom: 120px; /* 👈 separación visual del botón */
+}
+
+/* Avatar */
+.avatarContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.avatarWrapper {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    border: 3px solid var(--color-pastel-orange);
+    transition: opacity 0.3s;
+}
+
+.avatarImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.avatarWrapper:hover {
+    opacity: 0.8;
+}
+
+.hiddenFileInput {
+    display: none;
+}
+
+/* ========================================================== */
+/* FORMULARIO */
+/* ========================================================== */
+.profileForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.detailContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  /* --- FIX CLAVE: permitir que los hijos con texto se reduzcan y hagan wrap --- */
+  min-width: 0;          /* Flex item puede reducirse y no desbordar */
+  align-items: stretch;  /* Asegura que el hijo ocupe el ancho disponible */
+}
+
+
+/* Inputs y selects SOLO en edición */
+.profileForm input,
+.profileForm textarea,
+.profileForm select {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #333;
+    background-color: white; /* antes: #f0f0f0 */
+    transition: border-color 0.2s, background-color 0.2s;
+    resize: vertical;
+}
+
+.profileForm input:focus,
+.profileForm textarea:focus,
+.profileForm select:focus {
+    border-color: var(--color-pastel-orange);
+    outline: none;
+    box-shadow: 0 0 0 1px var(--color-pastel-orange);
+}
+
+/* Texto plano en modo no edición */
+.readonlyText {
+    font-size: 0.95rem;
+    color: #333;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee; /* opcional */
+}
+
+
+.expandLink {
+    color: var(--color-pastel-orange);
+    cursor: pointer;
+    font-weight: 600;
+    margin-left: 4px;
+}
+
+/* ========================================================== */
+/* FOOTER FIJO (Botón Editar Perfil) */
+/* ========================================================== */
+.stickyFooter {
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.stickyFooter button {
+    min-width: 180px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    background-color: var(--color-pastel-orange);
+    color: white;
+    box-shadow: 0 4px 6px rgba(255, 183, 153, 0.4);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.stickyFooter button:hover {
+    background-color: #fa966f;
+    transform: translateY(-2px);
+}
+
+/* ========================================================== */
+/* Botón de Guardar */
+/* ========================================================== */
+
+/* Estilos existentes para el contenedor de acciones */
+.profileActions {
+    position: sticky;
+
+
+    background-color: #fff;
+    padding: 20px 0 25px;
+
+
+    display: flex;
+    justify-content: center;
+
+    /* separación visual */
+    margin-top: 20px;
+}
+/* Estilos base para AMBOS botones (Editar Perfil y Cerrar Sesión) */
+.profileActions button {
+    width: 80%;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    
+    /* Estilos del botón Editar Perfil (Naranja) */
+    border: none;
+    background-color: var(--color-pastel-orange);
+    color: white;
+    box-shadow: 0 4px 6px rgba(255, 183, 153, 0.4);
+}
+
+.profileActions button:hover {
+    background-color: #fa966f; 
+    transform: translateY(-2px);
+}
+
+/* --- ESTILOS ESPECÍFICOS PARA CERRAR SESIÓN (Botón Blanco) --- */
+
+.profileActions .logout-button {
+    background-color: white; 
+    color: var(--color-pastel-orange);
+    border: none; 
+    box-shadow: none; 
+}
+
+.profileActions .logout-button:hover {
+
+    background-color: #f0f0f0; 
+    color: var(--color-pastel-orange); 
+    transform: translateY(-2px);
+}
+

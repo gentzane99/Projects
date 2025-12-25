@@ -1,0 +1,221 @@
+<div class="members-list-modal">
+  <div class="modal-overlay" (click)="closeModal()"></div>
+  <div class="modal-content">
+    <!-- Vista de Miembros -->
+    @if (showMembersView) {
+      <div class="members-view">
+        <div class="modal-header">
+          <div class="header-title-group">
+            <h2 class="modal-title">Miembros aceptados</h2>
+            @if (trip) {
+              <p class="modal-subtitle">
+                {{ trip.destinyPlace }} | {{ trip.startDate | date:'d' }} al
+                {{ trip.endDate | date:'d \'de\' MMMM' }}
+              </p>
+            } @else if (members.length > 0) {
+              <p class="modal-subtitle">
+                {{ members.length }} miembro{{ members.length > 1 ? 's' : '' }} en el viaje
+              </p>
+            }
+          </div>
+          <button class="close-btn" (click)="closeModal()" aria-label="Cerrar">
+            ×
+          </button>
+        </div>
+
+        <div class="modal-body">
+          @if (successMessage) {
+            <div class="alert success">
+              {{ successMessage }}
+            </div>
+          }
+          @if (errorMessage) {
+            <div class="alert error">
+              {{ errorMessage }}
+            </div>
+          }
+
+          @if (loadingMembers) {
+            <div class="loading">
+              <p>Cargando miembros...</p>
+            </div>
+          } @else if (members.length > 0) {
+            <div class="members-grid">
+              @for (member of members; track member.userId) {
+                <div class="member-card" (click)="selectMember(member)">
+                  <div class="member-avatar">
+                    <img
+                      [src]="getMemberAvatar(member)"
+                      [alt]="getMemberFullName(member)"
+                      onerror="this.src='https://api.dicebear.com/7.x/identicon/svg?seed=default'"
+                    />
+                  </div>
+                  <div class="member-info">
+                    <h3 class="member-name">{{ getMemberFullName(member) }} </h3>
+
+                    @if (member.email) {
+                      <p class="member-detail">{{ member.email }}</p>
+                    }
+                  </div>
+                </div>
+              }
+            </div>
+          } @else {
+            <div class="empty-state">
+              <p>No hay miembros aceptados en este viaje aún.</p>
+            </div>
+          }
+        </div>
+      </div>
+    }
+
+    <!-- Vista de Reseñas -->
+    @if (showReviewsView && selectedMember) {
+      <div class="reviews-view">
+        <div class="modal-header">
+          <div class="header-title-group">
+            <button class="back-btn" (click)="goBackToMembers()" aria-label="Volver">
+              ←
+            </button>
+            <h2 class="modal-title">Reseñas sobre {{ getMemberFullName(selectedMember) }}</h2>
+          </div>
+          <div class="header-actions">
+            @if (!showCreateReviewForm) {
+              <button class="btn-primary" (click)="openCreateReviewForm()">
+                CREAR RESEÑA
+              </button>
+            }
+            <button class="close-btn" (click)="closeModal()" aria-label="Cerrar">
+              ×
+            </button>
+          </div>
+        </div>
+
+        <div class="modal-body">
+          @if (successMessage) {
+            <div class="alert success">
+              {{ successMessage }}
+            </div>
+          }
+          @if (errorMessage) {
+            <div class="alert error">
+              {{ errorMessage }}
+            </div>
+          }
+
+          @if (showCreateReviewForm) {
+          <h3 class="form-title">Crear reseña sobre {{ getMemberFullName(selectedMember) }}</h3>
+
+          <form class="review-form" (ngSubmit)="createReview()">
+            <div class="stars-selector">
+              <label class="form-label">Puntuación</label>
+              <div class="stars-input">
+                @for (i of [1, 2, 3, 4, 5]; track i) {
+                  <button
+                    type="button"
+                    class="star-btn"
+                    [class.active]="i <= reviewForm.score"
+                    (click)="setScore(i)"
+                    (mouseenter)="hoverScore = i"
+                    (mouseleave)="hoverScore = 0"
+                  >
+                    <span class="star-icon" [class.filled]="i <= (hoverScore || reviewForm.score)">★</span>
+                  </button>
+                }
+              </div>
+              @if (reviewForm.score > 0) {
+                <p class="score-text">{{ reviewForm.score }} de 5 estrellas</p>
+              }
+            </div>
+
+            <div class="form-group">
+              <label for="review-title" class="form-label">Titulo de la reseña</label>
+              <input
+                type="text"
+                id="review-title"
+                class="form-input"
+                [(ngModel)]="reviewForm.title"
+                name="title"
+                placeholder="Escribe un título para tu reseña"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="review-comment" class="form-label">Comentario</label>
+              <textarea
+                id="review-comment"
+                class="form-textarea"
+                [(ngModel)]="reviewForm.comment"
+                name="comment"
+                placeholder="Escribe tu comentario sobre este usuario"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button
+                type="button"
+                class="btn-secondary"
+                (click)="showCreateReviewForm = false"
+              >
+                CANCELAR
+              </button>
+              <button
+                type="submit"
+                class="btn-submit"
+                [disabled]="creatingReview || reviewForm.score === 0"
+              >
+                {{ creatingReview ? 'Creando...' : 'CREAR' }}
+              </button>
+            </div>
+          </form>
+          } @else {
+            <div class="reviews-list">
+              @if (loadingReviews) {
+                <div class="loading">
+                  <p>Cargando reseñas...</p>
+                </div>
+              } @else if (memberReviews.length > 0) {
+                <div class="reviews-grid">
+                  @for (review of memberReviews; track review.createdAt) {
+                    <div class="review-card">
+                      <div class="review-stars">
+                        @for (i of [1, 2, 3, 4, 5]; track i) {
+                          <span class="star" [class.filled]="i <= review.score">
+                            ★
+                          </span>
+                        }
+                      </div>
+                      <h3 class="review-title">{{ review.title }}</h3>
+                      <p class="review-body">{{ review.comment }}</p>
+                      <div class="review-footer">
+                        <div class="reviewer-avatar">
+                          <img
+                            [src]="getReviewAvatar(review)"
+                            [alt]="review.from"
+                            onerror="this.src='https://api.dicebear.com/7.x/identicon/svg?seed=default'"
+                          />
+                        </div>
+                        <div class="reviewer-info">
+                          <p class="reviewer-name">{{ review.from }}</p>
+                          <p class="review-date">{{ review.createdAt | date:'dd/MM/yyyy HH:mm' }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  }
+                </div>
+              } @else {
+                <div class="empty-state">
+                  <p>Este usuario aún no tiene reseñas.</p>
+                </div>
+              }
+            </div>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</div>
+
