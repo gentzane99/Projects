@@ -1,0 +1,21 @@
+<header class="border-bottom">
+    <div class="container-fluid d-flex align-items-center justify-content-between py-2 flex-wrap">
+        <div>
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="logo" width="30" height="30">
+        </div>
+        <nav>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/home']" routerLinkActive="text-danger">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/newuser']" routerLinkActive="text-danger">Nuevo Usuario</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="container py-2">
+  <router-outlet></router-outlet>
+</main>

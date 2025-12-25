@@ -1,0 +1,49 @@
+<section class="formulario mt-2">
+    <h2 class="text-uppercase py-2">{{title}} USUARIO</h2>
+    <form [formGroup]="userForm" (ngSubmit)="submitForm()" class="d-flex flex-column gap-3">
+        <div>
+            <label class="form-label" for="nombre">Nombre Usuario</label>
+            <input class="form-control border border-black fw-light fs-6" id="nombre" type="text" placeholder="Introduzca el nombre de usuario" formControlName="nombre">
+            @if(checkControl('nombre', 'required')){
+                <p class="text-danger">El nombre es obligatorio</p>
+            }
+            @if(checkControl('nombre', 'pattern')){
+                <p class="text-danger">El nombre no pueden ser espacios</p>
+            }
+        </div>
+        <div>
+            <label class="form-label" for="apellido">Apellido Usuario</label>
+            <input class="form-control border border-black fw-light fs-6" id="apellido" type="text" placeholder="Introduzca el apellido de usuario" formControlName="apellido">
+            @if(checkControl('apellido', 'required')){
+                <p class="text-danger">El apellido es obligatorio</p>
+            }
+            @if(checkControl('apellido', 'pattern')){
+                <p class="text-danger">El nombre no pueden ser espacios</p>
+            }
+        </div>
+        <div>
+            <label class="form-label" for="email">Email Usuario</label>
+            <input class="form-control border border-black fw-light fs-6" id="email" type="text" placeholder=" Introduzca el email de usuario" formControlName="email">
+            @if(checkControl('email', 'required')){
+                <p class="text-danger">El email es obligatorio</p>
+            }
+            @if(checkControl('email', 'pattern')){
+                <p class="text-danger">El email tiene que ser valido</p>
+            }
+        </div>
+        <div>
+            <label class="form-label" for="imagen">Imagen Usuario</label>
+            <input class="form-control border border-black fw-light fs-6" id="imagen" type="text" placeholder="Introduzca url de foto de usuario" formControlName="imagen">
+            @if(checkControl('imagen', 'required')){
+                <p class="text-danger">La imagen es obligatoria</p>
+            }            
+            @if(checkControl('imagen', 'webImgValidator')){
+            <p class="text-danger">{{userForm.get('imagen')?.errors?.['webImgValidator']}}</p>
+            }
+
+        </div>
+        <div>
+            <input type="submit" value={{title}} class="btn border border-black mt-2 text-black fw-normal" [disabled]="userForm.invalid">
+        </div>
+    </form>
+</section>

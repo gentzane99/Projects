@@ -1,0 +1,8 @@
+.btn-circle{
+    width: 40px;
+    height: 40px;
+}
+
+.pagination .page-item.active .btn {
+    background-color: #e0e0e0; 
+}

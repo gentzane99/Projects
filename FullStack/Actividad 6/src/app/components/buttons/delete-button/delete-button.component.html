@@ -1,0 +1,7 @@
+<a class="d-flex flex-column align-items-center text-dark text-decoration-none cursor-pointer" (click)="deleteUser()">
+    @if(visible()){
+        <!-- Show icon just in user list view -->
+        <i class="bi bi-trash fs-2"></i>
+    }
+    <span class="fs-6 fw-semibold">{{text()}}</span>
+</a>

@@ -1,0 +1,26 @@
+<section class="promises">
+    <div class="d-flex flex-column justify-content-between py-2">
+
+        <!-- User list -->
+        <div class="row g-4">
+            @for(user of arrUsersPromises; track user.id){
+            <article class="col-12 col-md-6 col-lg-3">
+                <app-user-card [miUser]="user" (deleteUserEmit)="onDeleteUser($event)" ></app-user-card>
+            </article>
+            }
+        </div>
+    
+        <!-- Pages -->
+        <div class="d-flex justify-content-center py-4" >
+            <nav>
+                <ul class="pagination">
+                    @for (page of totalPagesArray; track page) {
+                    <li class="page-item mx-1" [class.active]="page===currentPage">
+                        <button type="button" class= "btn-circle btn border-1 rounded-circle border-black text-black p-0" (click)="changePage(page)">{{page}}</button>
+                    </li>
+                    }
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
