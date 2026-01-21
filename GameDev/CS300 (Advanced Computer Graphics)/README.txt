@@ -1,9 +1,24 @@
-CS300 (Advanced Computer Graphics I):
+## CS300 – Advanced Computer Graphics I
 
-This course introduces students to algorithms that are essential to 
-creating photorealistic images in interactive simulations. Topics covered 
-include an overview of modern GPU (graphics processor unit) architecture and 
-the common graphics APIs used, including OpenGL and DirectX. Rendering techniques 
-covered include texturing, illumination models, transparency, shading algorithms, 
-mapping techniques (bump mapping, environment/reflection mapping, etc.), and shadows. 
-Students learn how to implement all algorithms by using vertex and pixel shaders.
+Advanced computer graphics course focused on the algorithms and techniques used to produce **photorealistic real-time rendering** in interactive applications.
+
+The course introduces modern **GPU architecture** and the use of industry-standard graphics APIs, including **OpenGL** and **DirectX**, with an emphasis on programmable graphics pipelines.
+
+### Core Topics
+
+- Modern GPU architecture and real-time rendering pipelines
+- Graphics APIs:
+  - OpenGL
+  - DirectX
+- Shader-based rendering:
+  - Vertex shaders
+  - Pixel (fragment) shaders
+- Texturing and material systems
+- Illumination and shading models
+- Transparency and blending techniques
+- Advanced mapping techniques:
+  - Bump mapping
+  - Environment and reflection mapping
+- Shadow generation techniques
+
+All rendering algorithms are implemented using programmable shaders, reinforcing an understanding of both the mathematical foundations and the practical GPU execution model.
