@@ -139,7 +139,7 @@ int main(void)
 		}
 
 		/*Clears the screen*/
-		system("clear");
+		system("cls");
 		
 		/*Prints the Space*/
 		PrintSpace(Space, SPACE_HEIGHT, SPACE_WIDTH);
