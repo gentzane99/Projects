@@ -93,4 +93,6 @@ A precompiled Windows console build is available via GitHub Releases.
 - Download the asset: `cs120_GalactersPrototype_Windows.zip`
 - Run the executable
 
-The executable is not stored in the repository itself.
+The executable is not stored in the repository itself.Ç
+[Download Windows build (GitHub Release)](../../releases)
+
