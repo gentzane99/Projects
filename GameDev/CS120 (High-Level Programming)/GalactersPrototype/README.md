@@ -85,3 +85,12 @@ OR
 - **Year:** 2018  
 - **Context:** Academic CS120 final project  
 - **Author:** Gentzane Pastor
+## Playable Build
+
+A precompiled Windows console build is available via GitHub Releases.
+
+- Go to the repository **Releases** section
+- Download the asset: `cs120_GalactersPrototype_Windows.zip`
+- Run the executable
+
+The executable is not stored in the repository itself.
