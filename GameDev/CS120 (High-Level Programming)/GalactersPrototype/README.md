@@ -94,5 +94,5 @@ A precompiled Windows console build is available via GitHub Releases.
 - Run the executable
 
 The executable is not stored in the repository itself.
-[Download Windows build (GitHub Release)](../../../releases)
+[Download Windows build (GitHub Release)](../../../../releases)
 
