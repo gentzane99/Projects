@@ -1,4 +1,4 @@
-# CS380 – Artificial Intelligence for Games  
+# CS380 – Artificial Intelligence for Games
 ## Deep Q-Learning Snake AI
 
 This project implements a **Deep Reinforcement Learning agent** using **Deep Q-Learning (DQN)** to learn how to play the classic **Snake** game.
