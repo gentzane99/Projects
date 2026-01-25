@@ -77,4 +77,8 @@ For each triangle, tangent and bitangent vectors are computed using vertex posit
 - **IDE:** Visual Studio 2022
 - **Configuration:** Release | x64
 
-A playable Windows build is available in **GitHub Releases**.
+## Executable Build
+
+A precompiled Windows build is available via GitHub Releases:
+
+https://github.com/gentzane99/Projects/releases/tag/cs300-normal-mapping-v1.0
