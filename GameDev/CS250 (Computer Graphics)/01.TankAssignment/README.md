@@ -1,12 +1,12 @@
-# CS250 – Assignments 2–3: Software Rendering & Camera Systems
+# CS250 â€“ Assignments 2â€“3: Software Rendering & Camera Systems
 
-This project contains my implementation of **Assignments 2 and 3** for the **CS250 – Computer Graphics II** course at DigiPen Institute of Technology.
+This project contains my implementation of **Assignments 2 and 3** for the **CS250 â€“ Computer Graphics II** course at DigiPen Institute of Technology.
 
 The focus of these assignments is the construction of a **basic software 3D rendering pipeline**, including hierarchical transformations, perspective projection, and multiple camera systems.
 
 ---
 
-## Assignment 2 – Simple Perspective Projection & Transformations
+## Assignment 2 â€“ Simple Perspective Projection & Transformations
 
 This assignment introduces the foundations of the rendering pipeline and object hierarchies.
 
@@ -22,11 +22,11 @@ Implemented features include:
 - Line and triangle rasterizers
 - Wireframe and solid rendering modes
 
-The tank is built from cube primitives defined in an input file, and transformations propagate through the hierarchy using parent–child relationships.
+The tank is built from cube primitives defined in an input file, and transformations propagate through the hierarchy using parentâ€“child relationships.
 
 ---
 
-## Assignment 3 – Viewing Matrix & Camera Systems
+## Assignment 3 â€“ Viewing Matrix & Camera Systems
 
 This assignment extends the pipeline with camera control and viewing transformations.
 
@@ -49,28 +49,28 @@ This assignment focuses on correct camera behavior and coordinate space transfor
 ## Controls
 
 ### Rendering / Camera modes
-- **1** – Wireframe mode  
-- **2** – Solid mode  
-- **3** – First-person camera  
-- **4** – Third-person camera  
-- **5** – Rooted camera  
+- **1** â€“ Wireframe mode  
+- **2** â€“ Solid mode  
+- **3** â€“ First-person camera  
+- **4** â€“ Third-person camera  
+- **5** â€“ Rooted camera  
 
 ### Tank controls
-- **A / D** – Rotate tank body  
-- **Q / E** – Rotate turret  
-- **R / F** – Rotate gun up / down  
-- **Space** – Move tank forward  
+- **A / D** â€“ Rotate tank body  
+- **Q / E** â€“ Rotate turret  
+- **R / F** â€“ Rotate gun up / down  
+- **Space** â€“ Move tank forward  
 
 ### Camera adjustment (third person)
-- **Z / X** – Decrease / increase camera distance  
-- **H / Y** – Decrease / increase camera height  
+- **Z / X** â€“ Decrease / increase camera distance  
+- **H / Y** â€“ Decrease / increase camera height  
 
 ---
 
 ## Build & Run
 
-- **IDE:** Visual Studio 2017  
-- **Recommended configuration:** Debug | x86  
+- **IDE:** Visual Studio 2022
+- **Recommended configuration:** Debug | x64  
 - The project can also be built in Release and other platforms.
 
 ---
@@ -82,13 +82,9 @@ This assignment focuses on correct camera behavior and coordinate space transfor
 
 ---
 
-## Known Issues
+## Executable Build
 
-- When rotating the tank or turret, there may be visual deformation due to an unresolved issue in camera vector updates.
+A precompiled Windows build is available via GitHub Releases:
 
----
+https://github.com/gentzane99/Projects/releases/tag/cs250-tank-v1.0
 
-## Notes
-
-This is an academic project.  
-Only original implementation code is included; assignment specifications are summarized and not reproduced verbatim.

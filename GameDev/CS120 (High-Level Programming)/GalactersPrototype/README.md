@@ -73,3 +73,10 @@ The player can also choose a spaceship type:
 - Build and run in **Debug x64** configuration
 
 ---
+
+## Playable Build
+
+A precompiled Windows console build is available via GitHub Releases.
+
+Download here:  
+https://github.com/gentzane99/Projects/releases/tag/cs120-galacters-v1.0
