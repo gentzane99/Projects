@@ -1,4 +1,4 @@
-## CS250 – Computer Graphics II  
+## CS250 â€“ Computer Graphics II  
 ### Assignments 4 & 5: Software Rendering Pipeline
 
 This project contains my implementation of Assignments 4 and 5 for the CS250 Computer Graphics II course at DigiPen Institute of Technology.
@@ -7,10 +7,10 @@ The goal of these assignments was to build a **software-based 3D rendering pipel
 
 ---
 
-### Assignment 4 – Axis-Angle Rotation, Orthogonal Matrix & Depth Buffering
+### Assignment 4 â€“ Axis-Angle Rotation, Orthogonal Matrix & Depth Buffering
 
 Implemented core transformation and depth handling features, including:
-- Model-to-world transformations using the airplane’s local axes
+- Model-to-world transformations using the airplaneâ€™s local axes
 - World-to-camera transformation using an orthogonal view matrix
 - Multiple camera modes (first person, third person, rooted camera)
 - Depth buffer creation, initialization, and per-frame clearing
@@ -20,7 +20,7 @@ This assignment focused on correct spatial transformations and visibility orderi
 
 ---
 
-### Assignment 5 – Culling, Back-Face Removal & Clipping
+### Assignment 5 â€“ Culling, Back-Face Removal & Clipping
 
 Extended the rendering pipeline with additional visibility optimizations:
 - Frustum plane generation in world space
@@ -36,7 +36,7 @@ This assignment emphasized performance-oriented rendering techniques by reducing
 
 ### Controls
 
-- **1–5**: Rendering and camera modes (wireframe, solid, first person, third person, rooted)
+- **1â€“5**: Rendering and camera modes (wireframe, solid, first person, third person, rooted)
 - **W / A / S / D / Q / E**: Pitch, roll, and yaw rotations
 - **Space**: Move airplane forward
 - **Z / X**: Decrease / increase camera distance
@@ -54,7 +54,16 @@ This assignment emphasized performance-oriented rendering techniques by reducing
 
 ---
 
-### Notes
+## Build & Run
 
-This is an academic project.  
-Only original implementation code is included; assignment specifications are summarized and not reproduced verbatim.
+- **IDE:** Visual Studio 2022
+- **Recommended configuration:** Debug | x64  
+- The project can also be built in Release and other platforms.
+
+---
+
+## Executable Build
+
+A precompiled Windows build is available via GitHub Releases:
+
+https://github.com/gentzane99/Projects/releases/tag/cs250-plane-v1.0
