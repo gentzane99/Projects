@@ -111,7 +111,9 @@ Changing these values allows experimentation with different learning behaviors.
 
 ---
 
-## Notes
+## Executable Build
 
-This is an academic project.  
-Only original implementation code is included; assignment specifications and teaching materials are not reproduced verbatim.
+A precompiled Windows build is available via GitHub Releases:
+
+https://github.com/gentzane99/Projects/releases/tag/cs380-dqn-snake-v1.0
+
