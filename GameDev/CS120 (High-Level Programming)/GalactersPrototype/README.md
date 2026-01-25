@@ -82,6 +82,6 @@ OR
 A precompiled Windows console build is available via GitHub Releases.
 
 Download here:  
-https://github.com/TU_USUARIO/TU_REPO/releases/tag/cs120-galacters-v1.0
+https://github.com/gentzane99/Projects/releases/tag/cs120-galacters-v1.0
 
 
