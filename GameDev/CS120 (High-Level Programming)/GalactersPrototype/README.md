@@ -69,19 +69,7 @@ The player can also choose a spaceship type:
 ---
 
 ## Build & Run
-- Run the **.exe** on exe folder 
----
-OR
----
 - Open `GalactersPrototype.sln` with **Visual Studio**
 - Build and run in **Debug x64** configuration
 
 ---
-
-## Project Information
-
-- **Language:** C  
-- **Platform:** Windows (Console)  
-- **Year:** 2018  
-- **Context:** Academic CS120 final project  
-- **Author:** Gentzane Pastor

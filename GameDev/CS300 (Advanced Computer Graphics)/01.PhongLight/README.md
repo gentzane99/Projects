@@ -6,18 +6,17 @@ Academic graphics project built in C++/OpenGL. The project generates a small lib
 
 ## Highlights
 - **Procedural mesh generation** (unit-sized, centered at origin):
-  - Plane, Cube, Cone, Cylinder, Sphere :contentReference[oaicite:1]{index=1}
+  - Plane, Cube, Cone, Cylinder, Sphere
 - **Per-vertex attributes**:
-  - Position, Normal, UV coordinates :contentReference[oaicite:2]{index=2}
+  - Position, Normal, UV coordinates
 - **Normal workflows**
-  - Face normals vs averaged (vertex) normals toggle :contentReference[oaicite:3]{index=3}
-  - Optional normal visualization mode :contentReference[oaicite:4]{index=4}
+  - Optional normal visualization mode
 - **Shader-based Phong illumination (GLSL)**
-  - Vertex + fragment shaders loaded from external files (no embedded shader strings) :contentReference[oaicite:5]{index=5}
-  - Lighting supports **point / spot / directional** modes :contentReference[oaicite:6]{index=6}
+  - Vertex + fragment shaders loaded from external files (no embedded shader strings)
+  - Lighting supports **point / spot / directional** modes
 - **Scene / interaction**
-  - Orbit-style camera controls while always looking at the object :contentReference[oaicite:7]{index=7}
-  - Animated light rig (toggleable) :contentReference[oaicite:8]{index=8}
+  - Orbit-style camera controls while always looking at the object
+  - Animated light rig (toggleable)
 
 ## Controls
 ### Shape selection / mesh resolution
@@ -52,7 +51,7 @@ Each primitive is generated procedurally and expanded into triangles for renderi
 - **Averaged normals**: accumulated and normalized per shared position (smooth shading)
 
 ### Phong shading pipeline
-The GLSL pipeline implements the Phong model with ambient, diffuse, and specular terms, plus attenuation for positional lights. Shader compilation/linking errors are surfaced with enough context to identify the shader file responsible. :contentReference[oaicite:9]{index=9}
+The GLSL pipeline implements the Phong model with ambient, diffuse, and specular terms, plus attenuation for positional lights. Shader compilation/linking errors are surfaced with enough context to identify the shader file responsible.
 
 ## Build & run
 - **IDE:** Visual Studio 2022
