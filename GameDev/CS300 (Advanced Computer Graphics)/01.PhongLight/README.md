@@ -58,3 +58,10 @@ The GLSL pipeline implements the Phong model with ambient, diffuse, and specular
 - **Config:** Release | x64
 
 A playable Windows build is available in **GitHub Releases** (includes the executable and required runtime dependencies).
+---
+
+## Executable Build
+
+A precompiled Windows build is available via GitHub Releases:
+
+https://github.com/gentzane99/Projects/releases/tag/cs300-procedural-geometry-phong-v1.0
