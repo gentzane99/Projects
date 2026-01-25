@@ -8,10 +8,10 @@ This assignment implements **shadow mapping for a spotlight** using a **two-pass
 ## Highlights
 - **Shadow mapping (two-pass pipeline)**
   - First pass renders scene depth from the light’s point of view
-  - Second pass applies the shadow map during camera rendering :contentReference[oaicite:0]{index=0}
+  - Second pass applies the shadow map during camera rendering
 - **Percentage-Closer Filtering (PCF)**
   - Uniform multi-sample neighborhood for soft shadow edges
-  - Adjustable kernel size at runtime :contentReference[oaicite:1]{index=1}
+  - Adjustable kernel size at runtime
 - **Spotlight shadows**
   - Light FOV matched to spotlight cone
   - Light always targets the central object
@@ -50,10 +50,10 @@ This assignment implements **shadow mapping for a spotlight** using a **two-pass
 
 ## Technical overview
 ### Shadow map generation
-The scene is first rendered from the spotlight’s point of view to a depth texture. The light’s projection parameters are chosen to match the spotlight cone, ensuring efficient depth coverage and minimizing wasted shadow map space. :contentReference[oaicite:2]{index=2}
+The scene is first rendered from the spotlight’s point of view to a depth texture. The light’s projection parameters are chosen to match the spotlight cone, ensuring efficient depth coverage and minimizing wasted shadow map space.
 
 ### Shadow usage & PCF
-During the camera pass, each fragment is transformed into light space to compute shadow map UVs and depth. Visibility is evaluated by sampling a square neighborhood around the projected coordinate and averaging the results (uniform PCF), producing softer and more stable shadow edges. :contentReference[oaicite:3]{index=3}
+During the camera pass, each fragment is transformed into light space to compute shadow map UVs and depth. Visibility is evaluated by sampling a square neighborhood around the projected coordinate and averaging the results (uniform PCF), producing softer and more stable shadow edges.
 
 ### Lighting integration
 The computed shadow factor modulates the Phong lighting contribution. Only a single spotlight is active in this assignment; normal mapping and multiple lights are intentionally disabled to keep the focus on shadowing correctness and quality.

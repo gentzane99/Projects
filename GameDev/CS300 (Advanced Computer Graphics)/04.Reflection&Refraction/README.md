@@ -8,14 +8,14 @@ This assignment implements **real-time environment mapping** using **dynamically
 ## Highlights
 - **Dynamic cube map generation**
   - Six environment faces rendered every frame from the object’s position
-  - Camera aligned with world axes (+X, −X, +Y, −Y, +Z, −Z) and 90° FOV :contentReference[oaicite:0]{index=0}
+  - Camera aligned with world axes (+X, −X, +Y, −Y, +Z, −Z) and 90° FOV
 - **Two-pass rendering pipeline**
   - Pass 1: render environment into cube map via FBOs
   - Pass 2: render scene using the generated environment map
 - **Reflection & refraction**
   - World-space reflection and refraction vectors
   - Configurable rendering modes (textured / reflective / refractive)
-  - Refractive index set to 1.33 (glass-like material) :contentReference[oaicite:1]{index=1}
+  - Refractive index set to 1.33 (glass-like material)
 - **Skybox rendering**
   - Cube-based skybox always centered on the camera
   - Depth testing and face culling disabled for correct inside rendering
@@ -53,7 +53,7 @@ This assignment implements **real-time environment mapping** using **dynamically
 
 ## Technical overview
 ### Cube map construction
-Each frame, the scene is rendered six times into a cube map, with the virtual camera placed at the center of the reflective/refractive object. Each pass uses a 90° field of view and square aspect ratio to correctly cover one cube face. :contentReference[oaicite:2]{index=2}
+Each frame, the scene is rendered six times into a cube map, with the virtual camera placed at the center of the reflective/refractive object. Each pass uses a 90° field of view and square aspect ratio to correctly cover one cube face.
 
 ### Environment sampling
 In the environment-mapped pass, reflection or refraction vectors are computed in world space from the view direction and surface normal. These vectors are used directly to sample the cube map and fetch the environment color.

@@ -7,8 +7,8 @@ This assignment extends a Phong-based rendering pipeline with full **tangent-spa
 
 ## Highlights
 - **Tangent-space normal mapping**
-  - Per-triangle tangent & bitangent computation from positions and UVs :contentReference[oaicite:0]{index=0}
-  - Gram–Schmidt orthonormalization to enforce T ⟂ N :contentReference[oaicite:1]{index=1}
+  - Per-triangle tangent & bitangent computation from positions and UVs 
+  - Gram–Schmidt orthonormalization to enforce T ⟂ N 
   - Normal, tangent, and bitangent uploaded as per-vertex attributes
 - **Shader pipeline (GLSL)**
   - Correct transformation of N, T, B to camera space
