@@ -68,4 +68,8 @@ The computed shadow factor modulates the Phong lighting contribution. Only a sin
 - **IDE:** Visual Studio 2022
 - **Configuration:** Release | x64
 
-A playable Windows build is available in **GitHub Releases**.
+## Executable Build
+
+A precompiled Windows build is available via GitHub Releases:
+
+https://github.com/gentzane99/Projects/releases/tag/cs300-shadow-mapping-pcf-v1.0
