@@ -77,22 +77,11 @@ OR
 - Build and run in **Debug x64** configuration
 
 ---
-
-## Project Information
-
-- **Language:** C  
-- **Platform:** Windows (Console)  
-- **Year:** 2018  
-- **Context:** Academic CS120 final project  
-- **Author:** Gentzane Pastor
 ## Playable Build
 
 A precompiled Windows console build is available via GitHub Releases.
 
-- Go to the repository **Releases** section
-- Download the asset: `cs120_GalactersPrototype_Windows.zip`
-- Run the executable
+Download here:  
+https://github.com/TU_USUARIO/TU_REPO/releases/tag/cs120-galacters-v1.0
 
-The executable is not stored in the repository itself.
-[Download Windows build (GitHub Release)](../../../../releases)
 
